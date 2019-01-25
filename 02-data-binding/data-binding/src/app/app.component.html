@@ -1,0 +1,25 @@
+<h3>Interpolation</h3>
+<div>{{title}}</div>
+<div>{{person.name}}</div>
+<div>{{ 1 + 1 }}</div>
+<h3>Expression</h3>
+<h5>Template input variable</h5>
+<ul>
+  <li *ngFor="let customer of customers">{{customer.name}}</li>
+</ul>
+<h5>Template reference variable</h5>
+<input (change)="onChanged(customerInput)" #customerInput>{{customerInput.value}}
+<h3>Property binding</h3>
+<img [src]="randomUrl">
+<button [disabled]="isBtnDisabled">Please click</button>
+
+<div [ngClass]="classes">[ngClass] binding to the classes property</div>
+<button [style.color]="isSpecial ? 'red': 'green'">Red</button>
+<button [style.font-size.%]="!isSpecial ? 150 : 50" >Small</button>
+
+<h3>Event binding</h3>
+<input (keyup.enter)="onKeyEnter(inputElement)" #inputElement>
+<h3>Two-way binding</h3>
+<app-sizer [(size)]="fontSizePx"></app-sizer>
+<app-sizer (size)="fontSizePx" (sizeChange)="fontSizePx=$event"></app-sizer>
+<div [style.font-size.px]="fontSizePx">Resizable Text</div>
