@@ -1,0 +1,35 @@
+<h3>Build-in Pipe</h3>
+<p>Number: {{e | number}}</p>
+<p>Number: {{e | number:'0.1-5'}}</p>
+<p>Number: {{e | number:'3.1-5'}}</p>
+<p>Number: {{e | number:'1.0-0'}}</p>
+<p>Number: {{e | number:'1.0-10'}}</p>
+
+<p>Currency: {{currency | currency}}</p>
+<p>Currency: {{currency | currency: 'CAD'}}</p>
+<p>Currency: {{currency | currency:'CAD':'symbol-narrow':'4.2-2'}}</p>
+<p>Currency: {{currency | currency:'CAD':'symbol':'4.2-2':'fr'}}</p>
+
+<p>Today is {{today | date}}</p>
+<p>Or if you prefer, {{today | date:'fullDate'}}</p>
+<p>The time is {{today | date:'h:mm a z'}}</p>
+
+<ul>
+  <li *ngFor="let fly of (flies | slice:0:1)">{{fly.name}}</li>
+</ul>
+
+<h3>Custom Pipe</h3>
+<ul>
+  <li *ngFor="let fly of (flies | withOption:1:2:3)">{{fly.name}}</li>
+</ul>
+
+<h3>Pure-Impure</h3>
+<input (keyup.enter)="onEnter(inputElement)" #inputElement><input type="checkbox" [(ngModel)]="canfly">
+<ul>
+  <li *ngFor="let fly of (flies | canfly)">{{fly.name}}</li>
+</ul>
+
+<input (keyup.enter)="onEnterImpure(inputElementImpure)" #inputElementImpure><input type="checkbox" [(ngModel)]="canfly">
+<ul>
+  <li *ngFor="let fly of (flies | canflyImpure)">{{fly.name}}</li>
+</ul>
