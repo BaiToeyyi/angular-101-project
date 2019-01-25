@@ -1,0 +1,20 @@
+<h3>Attributes Directive</h3>
+<h5>Build-in Directive</h5>
+<div [ngClass]="classes">NgClass</div>
+<div [style.color]="'red'">NgStyle</div>
+<div ngNonBindable>{{title}}</div>
+<h5>Custom Directive</h5>
+<div appSwitchColor>Switch color</div>
+<h3>Structural Directive</h3>
+<button type="button" (click)="isToggle = !isToggle">click</button>
+<h5>Build-in Directive</h5>
+<div *ngIf="isToggle">Is Display</div>
+<div [ngSwitch]="isToggle">
+  <div *ngSwitchCase="true">output</div>
+  <div *ngSwitchDefault>output2</div>
+</div>
+<ul>
+  <li *ngFor="let item of items">{{item.name}}</li>
+</ul>
+<h5>Custom Directive</h5>
+<div *appDisplay="isToggle">isToggle</div>
