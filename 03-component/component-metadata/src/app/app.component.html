@@ -1,0 +1,15 @@
+<app-selector></app-selector>
+<span app-selector></span>
+<div app-selector></div>
+<section app-selector></section>
+
+<app-template-style></app-template-style>
+
+<app-input-output [name]="name" (nameChange)="onNameChange($event)"></app-input-output>
+
+<app-interpolation></app-interpolation>
+
+<app-host></app-host>
+
+<app-export-as #exportAs="export-as"></app-export-as>
+<button type="button" (click)="exportAs.increase()">click</button>
