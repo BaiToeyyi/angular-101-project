@@ -3,16 +3,20 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CardComponent } from './card/card.component';
+import { FormsModule } from '@angular/forms';
+import { EmailValidateDirective } from './email-validate.directive';
+import { PasswordValidateDirective } from './password-validate.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent
+    EmailValidateDirective,
+    PasswordValidateDirective,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

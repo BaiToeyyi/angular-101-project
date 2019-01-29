@@ -10,4 +10,6 @@
     </div>
     <button type="submit" class="btn btn-primary" (click)="addName(firstName, lastName)">Submit</button>
   </form>
+
+  <app-card *ngFor="let card of sort()" [card]="card"></app-card>
 </div>
