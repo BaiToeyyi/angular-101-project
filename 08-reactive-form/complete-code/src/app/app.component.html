@@ -1,0 +1,27 @@
+<div class="container">
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address | Username</label>
+      <input type="email" formControlName="email" name="email" class="form-control" [ngClass]="{'is-invalid': form.get('email').touched && form.get('email').invalid}" id="exampleInputEmail1" aria-describedby="emailHelp"
+        placeholder="Enter email">
+      <div class="invalid-feedback" *ngIf="form.get('email').touched && form.get('email').invalid && form.get('email').errors['required']">Require filed.</div>
+      <div class="invalid-feedback" *ngIf="form.get('email').touched && form.get('email').invalid && form.get('email').errors['emailValid']">Email is invalid.</div>
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox"  class="form-check-input" formControlName="isEmail" name="isEmail" id="isEmail">
+      <label class="form-check-label" for="isEmail">Is email?</label>
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" formControlName="password" name="password" [ngClass]="{'is-invalid': passwordValid}" class="form-control" id="exampleInputPassword1" placeholder="Password"
+        minlength="3">
+        <div class="invalid-feedback" *ngIf="passwordValid && password.errors['required']">Require filed.</div>
+        <div class="invalid-feedback" *ngIf="passwordValid && password.errors['passwordValid']">Password is invalid.</div>
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" formControlName="check" name="check" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
