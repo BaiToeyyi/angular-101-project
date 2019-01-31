@@ -13,7 +13,11 @@ import { DIService } from './di.service';
     {
       provide: 'API_HOST_2',
       useValue: 'API_HOST_2'
-    }
+    },
+    // {
+    //   provide: 'API_HOST_3',
+    //   useValue: 'API_HOST_3 inner'
+    // }
   ]
 })
 export class AppComponent {
@@ -31,7 +35,11 @@ export class AppComponent {
     private diExists,
     @Inject('API_HOST_2')
     @Self()
-    private host_2
+    private host_2,
+    @Inject('API_HOST_3')
+    @Self()
+    @Optional()
+    private host_3
     ) {
     this.userService.user();
     this.diService.hello();
@@ -39,6 +47,7 @@ export class AppComponent {
     console.log('==========');
     this.diFactory2.user();
     console.log(this.host_2);
+    console.log(this.host_3);
     // this.diExists.user();
     // this.diFactory
   }

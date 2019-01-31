@@ -50,6 +50,10 @@ class DIFactory {
       provide: 'DI_EXISTS',
       useExisting: UserService
     },
+    {
+      provide: 'API_HOST_3',
+      useValue: 'API_HOST_3 module'
+    },
     UserService3
   ],
   bootstrap: [AppComponent]
