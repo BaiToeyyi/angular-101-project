@@ -1,0 +1,23 @@
+<h1>Hello Template</h1>
+<!-- <div *ngIf="isTemplate else loading">
+  <h3>Template Render</h3>
+</div> -->
+
+<ng-template [ngIf]="isTemplate" [ngIfElse]="loading">
+  <div>
+    <h3>Template Render</h3>
+  </div>
+</ng-template>
+
+<ng-template #loading>
+  <div>...loading</div>
+</ng-template>
+
+<!-- <ng-template let-title="title" #defaultTemplate>
+  <h4>Hello Default Template</h4>
+  <div>{{title}}</div>
+</ng-template> -->
+
+<!-- <ng-container *ngTemplateOutlet="defaultTemplate;context:{'title': title}"></ng-container>
+<ng-container #vc></ng-container>
+  -->
