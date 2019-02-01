@@ -13,6 +13,12 @@
   <div>...loading</div>
 </ng-template>
 
+<ng-template let-header="header" #templateHeader>
+  <h1>{{header}}</h1>
+</ng-template>
+
+<app-about [template]="templateHeader"></app-about>
+
 <!-- <ng-template let-title="title" #defaultTemplate>
   <h4>Hello Default Template</h4>
   <div>{{title}}</div>

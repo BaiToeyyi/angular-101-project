@@ -5,11 +5,11 @@ import { Component, ViewChild, TemplateRef, OnInit, AfterViewInit, AfterViewChec
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   // @ViewChild('loading', { read: TemplateRef }) loadingTemplate: TemplateRef<any>;
   // @ViewChild('defaultTemplate', { read: TemplateRef }) defaultTemplate: TemplateRef<any>;
   // @ViewChild('vc', { read: ViewContainerRef }) vc: ViewContainerRef;
-
+  public header = 'header';
   public isTemplate = false;
   // public title = 'title';
 
@@ -18,9 +18,12 @@ export class AppComponent {
   // };
 
 
-  // ngOnInit() {
+  ngOnInit() {
   //   console.log(this.loadingTemplate);
-  // }
+    setTimeout(() => {
+      this.header = 'xxxx';
+    }, 4000);
+  }
 
   // ngAfterViewInit() {
   //   console.log(this.loadingTemplate);
