@@ -1,0 +1,12 @@
+<div class="container">
+  <form [formGroup]="form">
+    <div>
+      <input formControlName="query">
+    </div>
+  </form>
+  <div class="row">
+    <div *ngFor="let user of users$ | async" class="col">
+      <app-card [user]="user"></app-card>
+    </div>
+  </div>
+</div>

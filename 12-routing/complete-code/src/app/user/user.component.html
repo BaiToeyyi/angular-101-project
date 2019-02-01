@@ -1,0 +1,5 @@
+<ul class="list-group">
+  <li *ngFor="let user of users" class="list-group-item" [routerLink]="['/user', user.id]" [queryParams]="{prop: 'xxx'}" routerLinkActive="active" >
+    {{user.firstName}} {{user.lastName}}
+  </li>
+</ul>
