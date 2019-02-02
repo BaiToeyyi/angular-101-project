@@ -16,16 +16,17 @@ export class UserService {
     @Inject(USER_URL) private apiUrl: string
   ) { }
 
-  /**
-   *
-   *
-   * @returns {Observable<User[]>}
-   * @memberof UserService
-   */
+
   public getUser(): Observable<User[]> {
     return this.http.get(`${this.apiUrl}/users`)
-    .pipe(
-      map(({data}: {data: any[]}) => data.map((d) => new User(d.id, d.first_name, d.last_name, d.avatar)))
-    );
+      .pipe(
+        map(({ data }: { data: any[] }) => data.map((d) => new User(d.id, d.first_name, d.last_name, d.avatar)))
+      );
+  }
+
+  public create(firstName, lastName): Observable<User> {
+    return this.http
+      .post(this.apiUrl + '/users', { first_name: firstName, last_name: lastName, avatar: 'https://picsum.photos/200/300' })
+      .pipe(map((d: any) => new User(d.id, d.first_name, d.last_name, d.avatar)));
   }
 }

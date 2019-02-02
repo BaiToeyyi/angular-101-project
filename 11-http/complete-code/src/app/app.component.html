@@ -1,7 +1,15 @@
 <div class="container">
-  <form [formGroup]="form">
-    <div>
-      <input formControlName="query">
+  <form [formGroup]="form" (ngSubmit)="onSubmit(form)">
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" formControlName="first_name" placeholder="First name">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" formControlName="last_name" placeholder="Last name">
+      </div>
+      <div class="col">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </div>
     </div>
   </form>
   <div class="row">
